@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<script src="syncr.js"></script>
+	</head>
+	<body>
+		<script>
+			//instanciate the class
+			var Loading=new syncr();
+			
+			//add a event
+			var DCL=Loading.addEvent("Dom Content");
+			//finish the event
+			document.addEventListener("DOMContentLoaded",DCL);
+			
+			imageaEvent=Loading.addEvent("Por-do-sol.jpg");
+			imagea=new Image();
+			imagea.addEventListener("load",imageaEvent);
+			imagea.src="Por-do-sol.jpg";
+			
+			imagebEvent=Loading.addEvent("Inverno.jpg");
+			imageb=new Image();
+			imageb.addEventListener("load",imagebEvent);
+			imageb.src="Inverno.jpg";
+			
+			imagecEvent=Loading.addEvent("Montanhas-azuis.jpg");
+			imagec=new Image();
+			imagec.addEventListener("load",imagecEvent);
+			imagec.src="Montanhas-azuis.jpg";
+			
+			imagedEvent=Loading.addEvent("Ninfeias.jpg");
+			imaged=new Image();
+			imaged.addEventListener("load",imagedEvent);
+			imaged.src="Ninfeias.jpg";
+			
+			Loading.addCB(()=>{
+				document.body.appendChild(imagea);
+				document.body.appendChild(imageb);
+				document.body.appendChild(imagec);
+				document.body.appendChild(imaged);
+				});
+			
+		</script>
+	</body>
+</html>
